@@ -1,0 +1,98 @@
+//curl -XPUT -H "Content-Type: application/json" http://localhost:9200/_all/_settings -d '{"index.blocks.read_only_allow_delete": null}'
+
+//PUT text
+
+//PUT text/_settings
+//{
+//  "index": {
+//    "blocks": {
+//      "read_only_allow_delete": "false"
+//    }
+//  }
+//}
+
+//POST text/document/_mapping
+
+{
+  "properties":{
+    "Name":{
+      "type":"text",
+      "analyzer":"keyword",
+      "fields":{
+        "raw":{
+          "type":"keyword"
+        }
+      }
+    },
+    "EntityType":{
+      "type":"text",
+      "analyzer":"english",
+      "fields":{
+        "raw":{
+          "type":"keyword"
+        }
+      }
+    },
+    "EntityPosition": {
+      "type": "long"
+    },
+    "Relevance": {
+      "type": "integer"
+    },
+    "SentenceStartIndex": {
+      "type": "long"
+    },
+    "SentenceEndIndex": {
+      "type": "long"
+    },
+    "SentimentScore": {
+      "type": "integer"
+    },
+    "PositiveAspectsCount": {
+      "type": "integer"
+    },
+    "NegativeAspectsCount": {
+      "type": "integer"
+    },
+    "NeutralAspectsCount": {
+      "type": "integer"
+    },
+    "EntitySource": {
+      "type":"text",
+      "analyzer":"english",
+      "fields":{
+        "raw":{
+          "type":"keyword"
+        }
+      }
+    },
+    "Aspects": {
+      "properties": {
+        "AspectName": {
+          "type": "text",
+          "analyzer":"english",
+          "fields": {
+            "raw": {
+              "type": "text"
+            }
+          }
+        },
+        "AspectSentiment": {
+          "type": "integer"
+        },
+        "AspectPosTag": {
+          "type": "text",
+          "analyzer":"keyword",
+          "fields": {
+            "raw": {
+              "type": "keyword"
+            }
+          }
+        },
+        "EntityDirectAspect": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

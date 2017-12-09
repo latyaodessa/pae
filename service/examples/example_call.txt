@@ -1,0 +1,14 @@
+
+// SAVE EXAMPLE 
+
+{
+	"lang" : "eng",
+	"q" : "Martin has blond hair"
+}
+
+SEARCH EXAMPLE
+
+{
+	"lang" : "eng",
+	"q" : "What color is Martin's hair?"
+}
