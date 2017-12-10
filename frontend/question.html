@@ -1,0 +1,25 @@
+<html lang="en" prefix="og: http://ogp.me/ns#" class=" js">
+<head>
+    <title>elasticsearch</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+<div class="login">
+    <h1>Ask Question</h1>
+    <p>After request it will take a few seconds to get a result</p>
+    <form onsubmit="return doAsk(this);">
+        <input id="q" type="text" name="u" placeholder="Ask question" required="required" />
+        <button id="clickMe" type="submit" class="btn btn-primary btn-block btn-large" >Do it!</button>
+    </form>
+
+    <div id="answers">
+        <h1>Answers are: </h1>
+    </div>
+</div>
+</body>
+</html>

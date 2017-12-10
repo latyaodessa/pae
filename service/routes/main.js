@@ -93,7 +93,7 @@ module.exports = function (router) {
     };
 
     let client = new elasticsearch.Client({
-        host: 'localhost:9200',
+        host: 'elastic-mis.cs.univie.ac.at:9200',
         log: 'trace'
     });
 
@@ -139,7 +139,7 @@ module.exports = function (router) {
         });
 
 
-        let formData = querystring.stringify({lang: req.body.lang, q: req.body.q});
+        let formData = querystring.stringify({lang: 'eng', q: req.body.q});
 
 
         request({
@@ -177,7 +177,7 @@ module.exports = function (router) {
     router.post('/search', function (req, res) {
 
 
-        let formData = querystring.stringify({lang: req.body.lang, q: req.body.q});
+        let formData = querystring.stringify({lang: 'eng', q: req.body.q});
 
 
         request({
